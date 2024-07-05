@@ -1,0 +1,63 @@
+{
+  "left" : [ {
+    "accessControl" : [ "App Admin" ],
+    "outline" : false,
+    "label" : "MENU",
+    "element" : "menuItem"
+  }, {
+    "pathsInvolved" : [ "/applicationuser/applicationuserlist" ],
+    "accessControl" : [ "App Admin" ],
+    "onClick" : "navigate_to_page",
+    "outline" : false,
+    "label" : "APPLICATION_USER",
+    "page" : {
+      "sid" : "8c5db44f-bef4-47cd-acb1-02e6be548cb9",
+      "name" : "Application Users",
+      "url" : "/applicationuser/applicationuserlist"
+    },
+    "element" : "menuItem"
+  }, {
+    "customUrl" : "/exports/exportspage",
+    "accessControl" : [ "all" ],
+    "onClick" : "navigate_to_url",
+    "outline" : false,
+    "valueChange" : true,
+    "currentNode" : "export-menu",
+    "icon" : {
+      "type" : "icon",
+      "icon" : {
+        "label" : "fas fa-upload",
+        "value" : "fas fa-upload"
+      },
+      "iconColor" : "#000000",
+      "iconSize" : "18px"
+    },
+    "label" : "EXPORTS",
+    "element" : "menuItem"
+  }, {
+    "pathsInvolved" : [ "/etab/etablist" ],
+    "accessControl" : [ "all" ],
+    "onClick" : "navigate_to_page",
+    "outline" : false,
+    "infiniteScroll" : false,
+    "valueChange" : true,
+    "currentNode" : "5d81976f-a0be-4279-b25d-70c8d5f9c39f",
+    "label" : "EXP",
+    "page" : {
+      "sid" : "764216d4-fbd2-41e8-9abd-c8e57742eb5a",
+      "name" : "Etab List",
+      "url" : "/etab/etablist"
+    },
+    "element" : "menuItem"
+  } ],
+  "topBarLeft" : [ ],
+  "topBarMiddle" : [ ],
+  "topBarRight" : [ {
+    "languages" : [ {
+      "code" : "en",
+      "name" : "English"
+    } ],
+    "element" : "language"
+  } ],
+  "right" : [ ]
+}

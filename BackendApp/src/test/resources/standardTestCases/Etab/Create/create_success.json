@@ -1,0 +1,41 @@
+{
+	"name": "CREATE_SUCCESS",
+	"description":"Create success",
+	"inputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"outputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"setUp":[
+	       ],
+	"requestDetails":{
+			           "serviceType":"CREATE",
+			           "inputData":{
+                        "one":"W47QDARZaB9zGRehGvFhKdGQz",
+                        "two":"vVXMFILgdU14QrKwpvIF3ZbV5"
+             },
+			           "method":"POST",
+			           "requestUrl":"/rest/etabs/",
+			           "recordInfo":{
+                        "tableRecordNo":1,
+                        "tableName":"Etab"
+             },
+			           "userName":"AppAdmin",
+			           "fileAttachmentInfo":[ 
+             ],
+			           "lookupConfiguration":{
+             }		
+	       },
+	"outputData": [{
+                        "one":"W47QDARZaB9zGRehGvFhKdGQz",
+                        "two":"vVXMFILgdU14QrKwpvIF3ZbV5"
+             }
+	       ],
+	"responseCode": 200,
+	"verifyUsingService":false,
+	"tearDown":{
+			     "Etab":{
+                        "method":"DELETE",
+                        "requestUrl":"/rest/etabs/{ids}",
+                        "clearRecordsAfterTest":true,
+                        "userName":"AppAdmin"
+             }		
+	       }
+}

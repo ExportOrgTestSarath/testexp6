@@ -1,0 +1,57 @@
+{
+	"name": "UPDATE_SUCCESS",
+	"description":"Update success",
+	"inputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"outputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"setUp":[
+			   {
+				            "serviceType":"CREATE",
+				            "inputData":{
+                        "one":"tQXwHS1EEfjkv474Hfo3hwha8",
+                        "two":"2zUWEToLkMZdwrTk9o9yFtxHm"
+             },
+				            "method":"POST",
+				            "requestUrl":"/rest/etabs/",
+				            "recordInfo":{
+                        "tableRecordNo":1,
+                        "tableName":"Etab"
+             },
+				            "userName":"AppAdmin",
+				            "fileAttachmentInfo":[ 
+             ],
+				            "lookupConfiguration":{
+             }
+		     }
+	       ],
+	"requestDetails":{
+			           "serviceType":"UPDATE",
+			           "inputData":{
+                        "two":"953lRekjYA6KjytoTmW9Dys5o",
+                        "one":"TvuBWhtO0ugphfhdsDSHbQYjM"
+             },
+			           "method":"PUT",
+			           "requestUrl":"/rest/etabs/",
+			           "recordInfo":{
+                        "tableRecordNo":1,
+                        "tableName":"Etab"
+             },
+			           "userName":"AppAdmin",
+			           "lookupConfiguration":{
+             }		
+	       },
+	"outputData": [{
+                        "two":"953lRekjYA6KjytoTmW9Dys5o",
+                        "one":"TvuBWhtO0ugphfhdsDSHbQYjM"
+             }
+	       ],
+	"responseCode": 200,
+	"verifyUsingService":false,
+	"tearDown":{
+			     "Etab":{
+                        "method":"DELETE",
+                        "requestUrl":"/rest/etabs/{ids}",
+                        "clearRecordsAfterTest":true,
+                        "userName":"AppAdmin"
+             }		
+	       }
+}

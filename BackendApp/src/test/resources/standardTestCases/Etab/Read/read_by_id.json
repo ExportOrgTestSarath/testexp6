@@ -1,0 +1,51 @@
+{
+	"name": "READ_BY_ID",
+	"description":"Read by id",
+	"inputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"outputModelName":"com.vanenburgdemo.exapp.model.Etab",
+	"setUp":[
+			   {
+				            "serviceType":"CREATE",
+				            "inputData":{
+                        "one":"dw3mqBpZlcqpxxUiJ93HXA39J",
+                        "two":"ynEHpDCXeTMZFQv31SHF83seJ"
+             },
+				            "method":"POST",
+				            "requestUrl":"/rest/etabs/",
+				            "recordInfo":{
+                        "tableRecordNo":1,
+                        "tableName":"Etab"
+             },
+				            "userName":"AppAdmin",
+				            "fileAttachmentInfo":[ 
+             ],
+				            "lookupConfiguration":{
+             }
+		     }
+	       ],
+	"requestDetails":{
+			           "serviceType":"GET_BY_SID",
+			           "method":"GET",
+			           "requestUrl":"/rest/etabs/{sid}",
+			           "recordInfo":{
+                        "tableRecordNo":1,
+                        "tableName":"Etab"
+             },
+			           "userName":"AppAdmin"		
+	       },
+	"outputData": [{
+                        "one":"dw3mqBpZlcqpxxUiJ93HXA39J",
+                        "two":"ynEHpDCXeTMZFQv31SHF83seJ"
+             }
+	       ],
+	"responseCode": 200,
+	"verifyUsingService":false,
+	"tearDown":{
+			     "Etab":{
+                        "method":"DELETE",
+                        "requestUrl":"/rest/etabs/{ids}",
+                        "clearRecordsAfterTest":true,
+                        "userName":"AppAdmin"
+             }		
+	       }
+}
