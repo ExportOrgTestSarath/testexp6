@@ -26,7 +26,7 @@ jobs:
       with:
         CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT: ${{ secrets.CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT }}
     
- 	- name: Building Cloud Functions...
+    - name: Building Cloud Functions...
       uses: ./.github/actions/dev-cloud-functions
       with:
         CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT: ${{ secrets.CLOUD_RUN_DEFAULT_SERVICE_ACCOUNT }}
