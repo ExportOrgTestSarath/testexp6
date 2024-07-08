@@ -27,12 +27,13 @@ public class CloudStorageService {
     	try {
             Blob blob = storage.get(bucketName, fileName);
     		inps = Channels.newInputStream(blob.reader());
+            CloudLogger.logInfo("end reading file");
     		return inps;
     	} catch (Exception e) {
     		CloudLogger.logInfo("csv read failed "+e);
     		throw e;
     	}
-    	CloudLogger.logInfo("end reading file");
+        //	CloudLogger.logInfo("end reading file");
     	//return Channels.newInputStream(blob.reader());
     }
 
