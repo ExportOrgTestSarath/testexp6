@@ -73,6 +73,7 @@ public class CSVToExcelConvertor {
 							cell.setCellValue(rowData[colNum]);
 						}
 					}
+					System.out.print("row size"+ rows.size()+ "\n");
 				} catch (InterruptedException | ExecutionException e) {
 					throw new FileConversionException(1001);
                 } catch (FileConversionException e) {
@@ -81,7 +82,7 @@ public class CSVToExcelConvertor {
 					throw new FileConversionException(500);
 				}
 			}
-			System.out.print("row size"+ rows.size()+ "\n");
+			
 			executorService.shutdown();
 			try (OutputStream outputStream = cloudStorageService.getExcelOutputStream(bucketName, excelFileName)) {
 				workbook.write(outputStream);
