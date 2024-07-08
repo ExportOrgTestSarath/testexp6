@@ -81,6 +81,7 @@ public class CSVToExcelConvertor {
 					throw new FileConversionException(500);
 				}
 			}
+			System.out.print("row size"+ rows.size()+ "\n");
 			executorService.shutdown();
 			try (OutputStream outputStream = cloudStorageService.getExcelOutputStream(bucketName, excelFileName)) {
 				workbook.write(outputStream);
