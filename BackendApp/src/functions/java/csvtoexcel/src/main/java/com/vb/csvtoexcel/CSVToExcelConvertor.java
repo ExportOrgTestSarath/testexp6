@@ -35,11 +35,12 @@ public class CSVToExcelConvertor {
 	public void convertCSVToExcel(String bucketName, String csvFileName, String excelFileName)
 			throws IOException, CsvValidationException, FileConversionException, Exception {
 		CloudStorageService cloudStorageService = cloudStorageService();
+		CloudLogger.logInfo("csv read starts");
 		try (	CloudLogger.logInfo("csv read starts");
 			InputStream csvInputStream = cloudStorageService.readCsvFile(bucketName, csvFileName);
-			CloudLogger.logInfo("csv read end");
 				CSVReader csvReader = new CSVReader(new InputStreamReader(csvInputStream));
 				Workbook workbook = new SXSSFWorkbook()) {
+			CloudLogger.logInfo("csv read end");
 			ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 			List<Future<List<String[]>>> futures = new ArrayList<>();
 			String[] nextLine;
