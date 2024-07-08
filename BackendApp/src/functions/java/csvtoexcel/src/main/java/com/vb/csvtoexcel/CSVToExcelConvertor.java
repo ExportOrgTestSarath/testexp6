@@ -36,7 +36,7 @@ public class CSVToExcelConvertor {
 			throws IOException, CsvValidationException, FileConversionException, Exception {
 		CloudStorageService cloudStorageService = cloudStorageService();
 		CloudLogger.logInfo("csv read starts");
-		try (	CloudLogger.logInfo("csv read starts");
+		try (	
 			InputStream csvInputStream = cloudStorageService.readCsvFile(bucketName, csvFileName);
 				CSVReader csvReader = new CSVReader(new InputStreamReader(csvInputStream));
 				Workbook workbook = new SXSSFWorkbook()) {
