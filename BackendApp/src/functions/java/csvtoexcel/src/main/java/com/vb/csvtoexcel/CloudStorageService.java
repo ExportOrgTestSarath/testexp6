@@ -22,10 +22,18 @@ public class CloudStorageService {
 
     public InputStream readCsvFile(String bucketName, String fileName) {
     	CloudLogger.logInfo("reading file");
-    	Blob blob = storage.get(bucketName, fileName);
+
+        InputStream inps = null;
+    	try {
+            Blob blob = storage.get(bucketName, fileName);
+    		inps = Channels.newInputStream(blob.reader());
+    		return inps;
+    	} catch (Exception e) {
+    		CloudLogger.logInfo("csv read failed "+e);
+    		throw e;
+    	}
     	CloudLogger.logInfo("end reading file");
-    	
-    	return Channels.newInputStream(blob.reader());
+    	//return Channels.newInputStream(blob.reader());
     }
 
     public void writeExcelFile(String bucketName, String fileName, byte[] content, String excelContentType) {
