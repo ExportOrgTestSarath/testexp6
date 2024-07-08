@@ -33,8 +33,10 @@ public class CSVToExcelFunction implements HttpFunction {
 		try {
 			csvToExcelConverter.convertCSVToExcel(bucketName, csvFileName, excelFileName);
 			response.setStatusCode(200, "CSV file successfully converted to Excel and written to Cloud Storage.");
+			CloudLogger.info("Error processing CSV file is success");
 		} catch (FileConversionException e) {
 			setResponseExceptionError(response, e);
+			CloudLogger.info("Error processing CSV file is success");
 		} catch (OutOfMemoryError outOfMemoryError) {
 			CloudLogger.logError("Error processing CSV file: errorcode " +outOfMemoryError.getMessage());
 			response.appendHeader("X-Failure-Code", "1003");
